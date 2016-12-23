@@ -7,3 +7,5 @@ const router = express.Router();
 router.get('/shows', (req, res, next) => {
   res.send('send items back');
 });
+
+module.exports = router;
