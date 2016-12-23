@@ -1,0 +1,13 @@
+{
+  "name": "gordoResource",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:matthew-gordon/gordoResource.git",
+  "author": "Matthew Gordon <laxredemption5525@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "knex": "^0.12.6",
+    "pg": "^6.1.2"
+  }
+}
