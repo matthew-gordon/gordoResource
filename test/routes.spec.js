@@ -57,14 +57,14 @@ describe('API Routes', () => {
   describe('GET /api/v1/shows/:id', () => {
     it('should return a single show', (done) => {
       chai.request(server)
-      .get('/api/v1/items/1')
+      .get('/api/v1/items/2y')
       .end((err, res) => {
         res.should.have.status(200);
         res.should.be.json;
         res.body.should.be.a('object');
         res.body.should.have.property('name');
         res.body.name.should.equal('Hannah Carstens');
-        res.body.should.have.proeprty('email');
+        res.body.should.have.property('email');
         res.body.email.should.equal('beautiful@themost.com');
         res.body.should.have.property('bio');
         res.body.bio.should.equal('One luck lady married to the MAN.');

@@ -12,6 +12,11 @@ function getAll() {
   return Items().select();
 }
 
+function getSingle(itemID) {
+  return Items().where('id', parseInt(itemID)).first();
+}
+
 module.exports = {
-  getAll: getAll
+  getAll: getAll,
+  getSingle: getSingle
 };

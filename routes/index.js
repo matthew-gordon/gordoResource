@@ -16,4 +16,15 @@ router.get('/items', (req, res, next) => {
   });
 });
 
+// *** GET single item *** //
+router.get('/items/:id', (req, res, next) => {
+  queries.getSingle(req.params.id)
+  .then((item) => {
+    res.status(200).json(item);
+  })
+  .catch((error) => {
+    next(error);
+  });
+});
+
 module.exports = router;
