@@ -15,10 +15,20 @@ describe('API Routes', () => {
   beforeEach((done) => {
     knex.migrate.rollback()
     .then(() => {
-      return knex.seed.run()
+      knex.migrate.latest()
       .then(() => {
-        done();
+        return knex.seed.run()
+        .then(() => {
+          done();
+        });
       });
+    });
+  });
+
+  afterEach((done) => {
+    knex.migrate.rollback()
+    .then(() => {
+      done();
     });
   });
 
@@ -30,7 +40,7 @@ describe('API Routes', () => {
         res.should.have.status(200);
         res.should.be.json;
         res.body.should.be.a('array');
-        res.body.length.should.equal(1);
+        res.body.length.should.equal(3);
         res.body[0].should.have.property('name');
         res.body[0].name.should.equal('Matt Gordon');
         res.body[0].should.have.property('email');
@@ -39,6 +49,27 @@ describe('API Routes', () => {
         res.body[0].bio.should.equal('Mad Lax Bro with the illest tunes yo.');
         res.body[0].should.have.property('admin');
         res.body[0].admin.should.equal(true);
+        done();
+      });
+    });
+  });
+
+  describe('GET /api/v1/shows/:id', () => {
+    it('should return a single show', (done) => {
+      chai.request(server)
+      .get('/api/v1/items/1')
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.property('name');
+        res.body.name.should.equal('Hannah Carstens');
+        res.body.should.have.proeprty('email');
+        res.body.email.should.equal('beautiful@themost.com');
+        res.body.should.have.property('bio');
+        res.body.bio.should.equal('One luck lady married to the MAN.');
+        res.body.should.have.property('admin');
+        res.body.admin.should.equal(false);
         done();
       });
     });
