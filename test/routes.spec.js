@@ -75,4 +75,31 @@ describe('API Routes', () => {
     });
   });
 
+  describe('POST /api/v1/items', () => {
+    it('should add an item', (done) => {
+      chai.request(server)
+      .post('/api/v1/items')
+      .send({
+        name: 'New Entry',
+        email: 'new@email.com',
+        bio: 'This is a new bio being added.',
+        admin: false
+      })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.property('name');
+        res.body.name.should.equal('New Entry');
+        res.body.should.have.property('email');
+        res.body.email.should.equal('new@email.com');
+        res.body.should.have.property('bio');
+        res.body.bio.should.equal('This is a new bio being added.');
+        res.body.should.have.property('admin');
+        res.body.admin.should.equal(false);
+        done();
+      });
+    });
+  });
+
 });
