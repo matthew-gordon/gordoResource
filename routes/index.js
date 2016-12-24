@@ -27,4 +27,18 @@ router.get('/items/:id', (req, res, next) => {
   });
 });
 
+// *** add show *** //
+router.post('/items', (req, res, next) => {
+  queries.add(req.body)
+  .then((itemID) => {
+    return queries.getSingle(itemID);
+  })
+  .then((item) => {
+    res.status(200).json(item);
+  })
+  .catch((error) => {
+    next(error);
+  });
+});
+
 module.exports = router;

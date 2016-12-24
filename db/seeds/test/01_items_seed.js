@@ -27,6 +27,9 @@ exports.seed = function(knex, Promise) {
           bio: 'This pup ain\'t no fluff.',
           admin: true
         })
-      ]);
+      ])
+      .then(() => {
+        return knex.raw("SELECT setval('items_id_seq', (SELECT MAX(id) FROM items))");
+      });
     });
 };
