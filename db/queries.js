@@ -20,8 +20,13 @@ function add(item) {
   return Items().insert(item, 'id');
 }
 
+function update(itemID, updates){
+  return Items().where('id', parseInt(itemID)).update(updates);
+}
+
 module.exports = {
   getAll: getAll,
   getSingle: getSingle,
-  add: add
+  add: add,
+  update: update
 };

@@ -102,4 +102,29 @@ describe('API Routes', () => {
     });
   });
 
+  describe('PUT /api/v1/items/:id', () => {
+    it('should update a show', (done) => {
+      chai.request(server)
+      .put('/api/v1/items/1')
+      .send({
+        bio: 'Updated Bio',
+        admin: false
+      })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.property('name');
+        res.body.name.should.equal('Matt Gordon');
+        res.body.should.have.property('email');
+        res.body.email.should.equal('lax@lacrosse.com');
+        res.body.should.have.property('bio');
+        res.body.bio.should.equal('Updated Bio');
+        res.body.should.have.property('admin');
+        res.body.admin.should.equal(false);
+        done();
+      });
+    });
+  });
+
 });

@@ -41,4 +41,19 @@ router.post('/items', (req, res, next) => {
   });
 });
 
+// *** update item *** //
+
+router.put('/items/:id', (req, res, next) => {
+  queries.update(req.params.id, req.body)
+  .then(() => {
+    return queries.getSingle(req.params.id);
+  })
+  .then((item) => {
+    res.status(200).json(item);
+  })
+  .catch((error) => {
+    next(error);
+  });
+});
+
 module.exports = router;
