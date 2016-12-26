@@ -23,18 +23,27 @@ body {
 
 /* -- DISPLAY -- */
 
-table, th, td {
+.display {
+  padding: 0 2em 0 2em;
+  width: 65%;
+}
+
+
+.inputs {
+  width: 35%;
+  border: 1px solid #000;
+}
+
+table {
   width: 100%;
   border: 1px solid #000;
 }
 
-.inputs {
-  width: 100%;
+th, td {
   border: 1px solid #000;
 }
 
 /* -- MEDIA QUERIES -- */
-
 
 @media screen and (min-width: 980px) /* Desktop */ {
   body {
@@ -46,10 +55,31 @@ table, th, td {
   body {
     background: blue;
   }
+  .display {
+    padding: 2em;
+    width: 100%;
+  }
+
+  .inputs {
+    width: 100%;
+    border: 1px solid #000;
+  }
+
 }
 
 @media screen and (max-width: 500px) /* Mobile */ {
   body {
     background: green;
+    }
+
+    .display {
+      padding: 2em;
+      width: 100%;
+    }
+
+    .inputs {
+      width: 100%;
+      border: 1px solid #000;
+    }
   }
 }
