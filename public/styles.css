@@ -50,19 +50,6 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
-  background: #187caf;
-}
-
-button{
-  border: 0;
-  width: 50%;
-  height: 30px;
-  background: #187cab;
-  color: #fff;
-  border-radius: 5px;
-}
-
 /* -- DISPLAY -- */
 
 .display {
