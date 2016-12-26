@@ -4,6 +4,9 @@
 $(document).ready(() => {
   const $display = $('#display');
   const $singleId = $('#singleId');
+  const $newName = $('#newName');
+  const $newEmail = $('#newEmail');
+  const $newBio = $('#newBio');
   const $getAll = $('#getAll');
   const $getSingle = $('#getSingle');
   const $createItem = $('#createItem');
@@ -51,7 +54,21 @@ $(document).ready(() => {
   });
 
   $createItem.click(() => {
-    console.log('Clicked Create Item');
+    let name = $newName.val();
+    let email = $newEmail.val();
+    let bio = $newBio.val();
+    let body = { "name": name, "email": email, "bio": bio };
+
+    $.ajax({
+      url: '/api/v1/items',
+      type: 'POST',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify(body)
+    })
+    .done(() => {
+      console.log('Success!');
+    });
   });
 
   $updateItem.click(() => {
