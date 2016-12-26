@@ -39,22 +39,18 @@ table {
   border: 1px solid #000;
 }
 
-th, td {
+th, tr, td {
   border: 1px solid #000;
 }
 
 /* -- MEDIA QUERIES -- */
 
 @media screen and (min-width: 980px) /* Desktop */ {
-  body {
-    background: red;
-  }
+
 }
 
 @media screen  and (max-width: 979px) /* Tablet */ {
-  body {
-    background: blue;
-  }
+
   .display {
     padding: 2em;
     width: 100%;
@@ -64,13 +60,10 @@ th, td {
     width: 100%;
     border: 1px solid #000;
   }
-
 }
 
 @media screen and (max-width: 500px) /* Mobile */ {
   body {
-    background: green;
-    }
 
     .display {
       padding: 2em;
@@ -82,4 +75,5 @@ th, td {
       border: 1px solid #000;
     }
   }
+
 }
