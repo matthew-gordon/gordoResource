@@ -4,13 +4,52 @@
   box-sizing: border-box;
 }
 
+body {
+  background: white;
+}
+
+/* -- STYLES -- */
+
 .center {
   text-align: center;
 }
 
-/* DISPLAY */
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* -- DISPLAY -- */
 
 table, th, td {
-  width: 650px;
+  width: 100%;
   border: 1px solid #000;
+}
+
+.inputs {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+/* -- MEDIA QUERIES -- */
+
+
+@media screen and (min-width: 980px) /* Desktop */ {
+  body {
+    background: red;
+  }
+}
+
+@media screen  and (max-width: 979px) /* Tablet */ {
+  body {
+    background: blue;
+  }
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+  body {
+    background: green;
+  }
 }
