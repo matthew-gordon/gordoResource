@@ -144,4 +144,42 @@ describe('API Routes', () => {
     });
   });
 
+  describe('DELETE /api/v1/items/:id', () => {
+    it('should delete an item',(done) => {
+      chai.request(server)
+      .delete('/api/v1/items/1')
+      .end((error, response) => {
+        response.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('array');
+        response.body.length.should.equal(3);
+        response.body[0].should.have.property('name');
+        response.body[0].name.should.equal('Matt Gordon');
+        response.body[0].should.have.property('email');
+        response.body[0].email.should.equal('lax@lacrosse.com');
+        response.body[0].should.have.property('bio');
+        response.body[0].bio.should.equal('Mad Lax Bro with the illest tunes yo.');
+        response.body[0].should.have.property('admin');
+        response.body[0].admin.should.equal(true);
+        chai.request(server)
+        .get('/api/v1/items')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a('array');
+          res.body.length.should.equal(2);
+          res.body[0].should.have.property('name');
+          res.body[0].name.should.equal('Hannah Carstens');
+          res.body[0].should.have.property('email');
+          res.body[0].email.should.equal('beautiful@themost.com');
+          res.body[0].should.have.property('bio');
+          res.body[0].bio.should.equal('One luck lady married to the MAN.');
+          res.body[0].should.have.property('admin');
+          res.body[0].admin.should.equal(false);
+          done();
+        });
+      });
+    });
+  });
+
 });
