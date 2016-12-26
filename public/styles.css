@@ -1,0 +1,16 @@
+/* -- GLOBAL -- */
+
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+/* DISPLAY */
+
+table, th, td {
+  width: 650px;
+  border: 1px solid #000;
+}
