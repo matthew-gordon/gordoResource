@@ -60,4 +60,20 @@ router.put('/items/:id', (req, res, next) => {
   });
 });
 
+// *** DELETE item *** //
+router.delete('/items/:id', (req, res, next) => {
+  queries.getSingle(req.params.id)
+  .then((item) => {
+    queries.deleteItem(req.params.id)
+    .then(() => {
+      res.status(200).json(item);
+    })
+    .catch((error) => {
+      next(error);
+    });
+  }).catch((error) => {
+    next(error);
+  });
+});
+
 module.exports = router;
