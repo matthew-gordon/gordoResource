@@ -54,10 +54,10 @@ describe('API Routes', () => {
     });
   });
 
-  describe('GET /api/v1/shows/:id', () => {
-    it('should return a single show', (done) => {
+  describe('GET /api/v1/items/:id', () => {
+    it('should return a single item', (done) => {
       chai.request(server)
-      .get('/api/v1/items/2y')
+      .get('/api/v1/items/2')
       .end((err, res) => {
         res.should.have.status(200);
         res.should.be.json;
@@ -122,6 +122,23 @@ describe('API Routes', () => {
         res.body.bio.should.equal('Updated Bio');
         res.body.should.have.property('admin');
         res.body.admin.should.equal(false);
+        done();
+      });
+    });
+    it('should NOT update an item if id field is part of the request', (done) => {
+      chai.request(server)
+      .put('/api/v1/items/1')
+      .send({
+        id: 20,
+        bio: 'An updated bio on a request with id.',
+        admin: true
+      })
+      .end((err, res) => {
+        res.should.have.status(422);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.property('error');
+        res.body.error.should.equal('You cannot update the id field');
         done();
       });
     });

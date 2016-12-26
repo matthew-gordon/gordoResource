@@ -27,7 +27,7 @@ router.get('/items/:id', (req, res, next) => {
   });
 });
 
-// *** add show *** //
+// *** POST add show *** //
 router.post('/items', (req, res, next) => {
   queries.add(req.body)
   .then((itemID) => {
@@ -41,9 +41,13 @@ router.post('/items', (req, res, next) => {
   });
 });
 
-// *** update item *** //
-
+// *** PUT update item *** //
 router.put('/items/:id', (req, res, next) => {
+  if(req.body.hasOwnProperty('id')) {
+    return res.status(422).json({
+      error: 'You cannot update the id field'
+    });
+  }
   queries.update(req.params.id, req.body)
   .then(() => {
     return queries.getSingle(req.params.id);
