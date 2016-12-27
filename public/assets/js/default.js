@@ -28,12 +28,14 @@ $(document).ready(() => {
       $display.empty();
       $.each(items, (index, value) => {
         $display.append(`
-          <tr>
-            <td>${value.id}</td>
-            <td>${value.name}</td>
-            <td>${value.email}</td>
-            <td>${value.bio}</td>
-          </tr>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <span>${value.id}</span><br>
+              <span>${value.name}</span><br>
+              <span>${value.email}</span><br>
+              <span>${value.bio}</span>
+            </div>
+          </div>
         `);
       });
     });
@@ -48,14 +50,16 @@ $(document).ready(() => {
       type: "GET"
     }).done(function(data) {
       $display.empty();
-      $display.append(
-        `<tr>
-          <td>${data.id}</td>
-          <td>${data.name}</td>
-          <td>${data.email}</td>
-          <td>${data.bio}</td>
-        </tr>`
-      );
+      $display.append(`
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <span>${data.id}</span><br>
+            <span>${data.name}</span><br>
+            <span>${data.email}</span><br>
+            <span>${data.bio}</span>
+          </div>
+        </div>
+      `);
     });
   });
 
@@ -83,12 +87,14 @@ $(document).ready(() => {
         $display.empty();
         $.each(items, (index, value) => {
           $display.append(`
-            <tr>
-              <td>${value.id}</td>
-              <td>${value.name}</td>
-              <td>${value.email}</td>
-              <td>${value.bio}</td>
-            </tr>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <span>${value.id}</span><br>
+                <span>${value.name}</span><br>
+                <span>${value.email}</span><br>
+                <span>${value.bio}</span>
+              </div>
+            </div>
           `);
         });
       });
@@ -120,12 +126,14 @@ $(document).ready(() => {
         $display.empty();
         $.each(items, (index, value) => {
           $display.append(`
-            <tr>
-              <td>${value.id}</td>
-              <td>${value.name}</td>
-              <td>${value.email}</td>
-              <td>${value.bio}</td>
-            </tr>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <span>${value.id}</span><br>
+                <span>${value.name}</span><br>
+                <span>${value.email}</span><br>
+                <span>${value.bio}</span>
+              </div>
+            </div>
           `);
         });
       });
@@ -150,12 +158,14 @@ $(document).ready(() => {
         $display.empty();
         $.each(items, (index, value) => {
           $display.append(`
-            <tr>
-              <td>${value.id}</td>
-              <td>${value.name}</td>
-              <td>${value.email}</td>
-              <td>${value.bio}</td>
-            </tr>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <span>${value.id}</span><br>
+                <span>${value.name}</span><br>
+                <span>${value.email}</span><br>
+                <span>${value.bio}</span>
+              </div>
+            </div>
           `);
         });
       });
