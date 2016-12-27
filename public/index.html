@@ -15,78 +15,22 @@
   </head>
   <body>
 
-    <!-- HEADER
-    ======================================================= -->
-    <header class="center">
-      <h1>Items for Gordo Resource</h1>
-      <p>Welcome to Gordo's resources!</p>
-    </header>
+  <div class="container">
+    <div class="row" id="display">
+      <!-- dynamic content -->
+    </div><!-- row -->
 
-    <!-- BODY
-    ======================================================= -->
-    <main>
-      <section class="flex container">
+    <hr>
 
-        <div class="display" id="display">
-          <!-- dynamic content -->
-        </div><!-- display -->
-
-        <div class="inputs">
-          <ul id="toolbar" class="center">
-
-            <li>
-              <label for="getAll"><h3>GET All Items</h3></label><br/>
-              <button id="getAll">Get Items</button>
-            </li>
-
-            <li>
-              <label for="getSingle"><h3>GET Single Item by id</h3></label><br/>
-              <input id="singleId" type="text" name="getSingle" placeholder="ID"><br/>
-              <button id="getSingle">Get Item</button>
-            </li>
-
-            <li>
-              <label for="createItem"><h3>POST create new item</h3></label><br/>
-              <input id="newName" type="text" name="newName" placeholder="Name"><br/>
-              <input id="newEmail" type="text" name="newEmail" placeholder="Email"><br/>
-              <textarea id="newBio" name="newBio" placeholder="Bio"></textarea><br/>
-              <button id="createItem">Create Item</button>
-            </li>
-
-            <li>
-              <label for="updateItem"><h3>PUT update single item by id</h3></label><br/>
-              <input id="updateId" type="text" name="updateId" placeholder="ID"><br/>
-              <input id="updateName" type="text" name="updateName" placeholder="Name"><br/>
-              <input id ="updateEmail" type="text" name="updateEmail" placeholder="Email"><br/>
-              <textarea id="updateBio" name="updateBio" placeholder="Bio"></textarea><br/>
-              <button id="updateItem">Update Item</button>
-            </li>
-
-            <li>
-              <label for="deleteItem"><h3>DELETE single item by id</h3></label><br/>
-              <input id="deleteId" type="text" name="deleteId" placeholder="ID"><br/>
-              <button id="deleteItem">Delete Item</button>
-            </li>
-
-          </ul>
-        </div><!-- inputs -->
-
-      </section>
-    </main>
-
-
-    <!-- FOOTER
-    ======================================================= -->
     <footer>
-
+      <p>&copy; 2016 GORDO, Inc.</p>
     </footer>
+  </div> <!-- container -->
 
   <!-- jQuery -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <!-- bootstrap -->
-
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 
   <!-- default js -->
