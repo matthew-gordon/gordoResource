@@ -3,8 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>gordoResource</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- normalize -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
 
@@ -20,18 +27,8 @@
     <main>
       <section class="flex container">
 
-        <div class="display">
-          <table>
-            <thead>
-              <th>id</th>
-              <th>name</th>
-              <th>email</th>
-              <th>bio</th>
-            </thead>
-            <tbody id="display">
-              <!-- dynamic content -->
-            </tbody>
-          </table>
+        <div class="display" id="display">
+          <!-- dynamic content -->
         </div><!-- display -->
 
         <div class="inputs">
@@ -88,7 +85,11 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+  <!-- bootstrap -->
+
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
   <!-- default js -->
-  <script type="text/javascript" src="default.js"></script>
+  <script type="text/javascript" src="assets/js/default.js"></script>
   </body>
 </html>
